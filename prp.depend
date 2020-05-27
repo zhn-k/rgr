@@ -1,0 +1,49 @@
+# depslib dependency file v1.0
+1446671344 source:d:\программирование 2 семестр\prp\main.cpp
+	<iostream>
+
+1589821639 source:d:\программирование 2 семестр\prp\kontragent.cpp
+	"kontragent.h"
+
+1589821455 d:\программирование 2 семестр\prp\kontragent.h
+	<iostream>
+	<cstring>
+
+1590609219 source:c:\users\111\desktop\prp\main.cpp
+	<iostream>
+	<string>
+	"kontragent.h"
+	"order.h"
+	"cashIN.h"
+	"cashOUT.h"
+	<fstream>
+
+1590608625 source:c:\users\111\desktop\prp\kontragent.cpp
+	"kontragent.h"
+
+1590528766 c:\users\111\desktop\prp\kontragent.h
+	<iostream>
+	<string.h>
+	<fstream>
+
+1590349975 source:c:\users\111\desktop\prp\cashin.cpp
+	"cashIN.h"
+
+1590351034 c:\users\111\desktop\prp\cashin.h
+	"order.h"
+
+1590528766 c:\users\111\desktop\prp\order.h
+	<iostream>
+	<string.h>
+	"kontragent.h"
+	<fstream>
+
+1590608663 source:c:\users\111\desktop\prp\order.cpp
+	"order.h"
+
+1590350299 source:c:\users\111\desktop\prp\cashout.cpp
+	"cashOUT.h"
+
+1590351034 c:\users\111\desktop\prp\cashout.h
+	"order.h"
+
