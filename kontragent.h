@@ -18,7 +18,7 @@ protected:
     string getTitle() const;
     void CIN();
     ~kontragent();
-   friend void operator<<(ofstream& fout, const kontragent& obj);
+   friend ofstream& operator<<(ofstream& fout, const kontragent& obj);
 };
 
 #endif // KONTRAGENT_H_INCLUDED

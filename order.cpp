@@ -49,12 +49,15 @@ void order:: print()
     cout<<endl<<"date\t"<<this->getDate()<<"\ttitle\t"<<this->P->getTitle()<<"\taccount\t"<<this->P->getAccount()<<"\tpurpose\t"<<this->getPurpose()<<"\tpay\t"<<this->getPay()<<endl;
 }
 order::~order(){}
-void operator<<(ofstream& fout, const order& P)
+ofstream& operator<<(ofstream& fout, const order& P)
 {
     fout <<"\tdate\t"<< P.getDate() ;
     fout <<"\tpay\t"<< P.getPay() ;
     fout <<"\tpurpose\t"<<P.getPurpose();
     fout<<"\n" ;
+    return fout;
 
 
 }
+
+
