@@ -24,7 +24,7 @@ protected:
     string getPurpose()const;
     void CIN (kontragent*P);
     void print();
-    friend bool operator<<(ofstream& fout, const order& obj);
+    friend void operator<<(ofstream& fout, const order& obj);
     ~order();
 };
 

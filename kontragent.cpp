@@ -33,11 +33,11 @@ string kontragent::getTitle()const
 }
 
 kontragent::~kontragent(){}
-bool operator<<(ofstream& fout, const kontragent& P)
+void operator<<(ofstream& fout, const kontragent& P)
 {
     fout <<"\taccount\t"<< P.getAccount() ;
     fout << "\ttitle"<<P.getTitle() ;
     fout<<"\n";
-    return fout;
+
 }
 
