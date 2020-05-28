@@ -32,28 +32,32 @@ void order::setPay(int pay)
  void order:: CIN (kontragent *P)
 {   int pay, date;
     string  purpose;
+    setlocale(LC_ALL, "Russian");
 
-    cout<<"Enter pay\t";
+    cout<<"введите сумму платежа\t";
     cin>>pay;
     this->setPay(pay);
-    cout<<"Enter date\t";
+    cout<<"введите дату оплаты\t";
     cin>>date;
     this->setDate(date);
-    cout<<"Enter purpose\t";
+    cout<<"введите назначение платежа\t";
     cin>>purpose;
     this->setPurpose(purpose);
     this->P=P;
 }
 void order:: print()
-{
-    cout<<endl<<"date\t"<<this->getDate()<<"\ttitle\t"<<this->P->getTitle()<<"\taccount\t"<<this->P->getAccount()<<"\tpurpose\t"<<this->getPurpose()<<"\tpay\t"<<this->getPay()<<endl;
+{    setlocale(LC_ALL, "Russian");
+
+    cout<<endl<<"дата оплаты "<<this->getDate()<<" название организации "<<this->P->getTitle()<<" номер счета "<<this->P->getAccount()<<" назначение платежа "<<this->getPurpose()<<" сумма оплаты "<<this->getPay()<<endl;
 }
 order::~order(){}
 ofstream& operator<<(ofstream& fout, const order& P)
 {
-    fout <<"\tdate\t"<< P.getDate() ;
-    fout <<"\tpay\t"<< P.getPay() ;
-    fout <<"\tpurpose\t"<<P.getPurpose();
+        setlocale(LC_ALL, "Russian");
+
+    fout <<"\tдата оплаты\t"<< P.getDate() ;
+    fout <<"\tсумма оплаты\t"<< P.getPay() ;
+    fout <<"\tназначение платежа\t"<<P.getPurpose();
     fout<<"\n" ;
     return fout;
 

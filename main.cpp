@@ -11,19 +11,20 @@ using namespace std;
 
 int main()
 {
+    setlocale(LC_ALL, "Russian");
 int i,x,k,j, date1, pay1=0, pay2=0, account1, account2, balance=0,n = 0;
 string purpose1, purpose2, title1,title2;
 ofstream fout;
 fout.open("information.txt", ios::app);
-cout<<"enter the number of elements"<<endl;
+cout<<"введите количество элементов"<<endl;
 cin>>x;
 
 kontragent kin[x];
 kontragent kout[x];
 cashIN in[x];
 cashOUT out[x];
-cout<<"\nenter  elements of cashIN\n\n"<<endl;
-fout<<"Elements of cashIN\n";
+cout<<"\nВведите элементы приходного ордера\n\n"<<endl;
+fout<<"Элементы приходного ордера\n";
 for(i=0; i<x;  i++)
 {
     kin[i].CIN();
@@ -35,8 +36,8 @@ for(i=0; i<x;  i++)
     in[i].print();
     fout<<in[i];
 }
-fout<<"Elements of cashOUT\n";
-cout<<"\nenter  elements of cashOUT\n\n";
+fout<<"Элементы расходного ордера\n";
+cout<<"\nВведите элементы расходного ордера\n\n";
 
 for(j=0; j<x; j++)
 {
@@ -50,12 +51,12 @@ for(j=0; j<x; j++)
     out[j].print();
     fout<<out[j];
 }
-cout<<"\n information purpose 1\n"<<"\n information account 2\n"<<"\n information title 3\n"<<"\n information balance 4\n";
+cout<<"\n введите 1 для получения информации по параметру(назначение)\n"<<"\n введите 2 для получения информации по параметри(счет)\n"<<"\n введите 3 для получения информации по параметру (название оргианизации)\n"<<"\n введите 4 , чтобы узнать баланс на определенную дату\n";
 cin>>k;
 switch(k){
 /////////////////////////////////////////////////
 case 1:
-cout <<"purpose1"<<endl;
+cout <<"введитне назначение платежа для поиска в  приходном ордере"<<endl;
 cin>>purpose1;
 
 n=-1;
@@ -69,17 +70,17 @@ n= i;
  if (n!= -1)
  {
     in[ n].print();
-    fout<<"information (purpose)\n";
+    fout<<"информация по параметру (назначение)\n";
     fout<<in[n];
  }
  else
  {
-    cout << " purpose it's not find" << endl;
-    fout<<"information (purpose)\n";
-    fout<<  " \npurpose it's not find\n";
+    cout << " платежа с введенным параметром нет" << endl;
+    fout<<"информация по параметру (назначение)\n";
+    fout<<  " \nплатежа с введенным параметром нет\n";
  }
 
-cout <<"purpose2"<<endl;
+cout <<"введитне назначение платежа для поиска в расходном ордере"<<endl;
 cin>>purpose2;
 
 n=-1;
@@ -90,21 +91,21 @@ n= j;
 
 }
 if (n!= -1)
-{cout <<"purpose2"<<endl;
+{cout <<"информация по параметру (назначение)"<<endl;
   out[ n].print();
-  fout<<"information (purpose)\n";
+  fout<<"информация по параметру (назначение)\n";
   fout<<out[n];
 }
 else
 {
-    cout << " purpose it's not find\n" ;
-    fout<<"information (purpose)\n";
-    fout<<"purpose it's not find\n" ;
+    cout << " платежа с введенным парматером нет\n" ;
+    fout<<"информация по параметру (назначение)\n";
+    fout<<"платежа с введенным параметром нет\n" ;
  }
  break;
  ///////////////////////////////////////////////////////
 case 2:
-    cout <<"account1"<<endl;
+    cout <<"введите счет платежа для поиска в приходном ордере"<<endl;
     cin>>account1;
      n= -1;
 for ( i = 0; i < x; i++)
@@ -116,17 +117,17 @@ for ( i = 0; i < x; i++)
 if (n!= -1)
  {
     in[ n].print();
-    fout<<"information (account)\n";
+    fout<<"информация по параметру (счет)\n";
     fout<<in[n];
  }
 else
  {
-    cout << " account it's not find\n" ;
-    fout<<"information (account)\n";
-    fout<<"account it's not find\n" ;
+    cout << " платежа с введенным парметром нет\n" ;
+    fout<<"информация по параметру (счет)\n";
+    fout<<"платежа с введенным параметром нет\n" ;
  }
 
-    cout <<"account2"<<endl;
+    cout <<"введите счет платежа для поиска в расходном ордере"<<endl;
     cin>>account2;
     n= -1;
 for ( j = 0; j < x; j++)
@@ -138,19 +139,19 @@ for ( j = 0; j < x; j++)
 if (n!= -1)
  {
     out[ n].print();
-    fout<<"information (account)\n";
+    fout<<"информация по параметру (счет)\n";
     fout<<out[n];
  }
  else
  {
-    cout << " account it's not find\n";
-    fout<<"information (account)\n";
-    fout<<"account it's not find\n" ;
+    cout << " платежа с введенным параметром нет\n";
+    fout<<"информация по параметру (счет)\n";
+    fout<<"платежа с введенным параметром нет\n" ;
  }
  break;
 //////////////////////////////////////////////////
  case 3 :
-    cout <<"title1"<<endl;
+    cout <<"введите название организации для поиска в приходном ордере"<<endl;
     cin>>title1;
     n= -1;
 for ( i = 0; i < x; i++)
@@ -162,17 +163,17 @@ for ( i = 0; i < x; i++)
  if (n!= -1)
 {
     in[ n].print();
-    fout<<"information (title)\n";
+    fout<<"информация по пармаметру (название)\n";
     fout<<in[n];
 }
  else
  {
-    cout << " title it's not find\n" ;
-    fout<<"information (title)\n";
-    fout<<"title it's not find\n" ;
+    cout << " платежа с введенным параметром нет\n" ;
+    fout<<"информация по пармаметру (название)\n";
+    fout<<"платежа с введенным параметром нет\n" ;
  }
 
-    cout <<"title2"<<endl;
+    cout <<"введите название организации для поиска в расходном ордере"<<endl;
     cin>>title2;
     n= -1;
 
@@ -185,19 +186,19 @@ for ( j = 0; j < x; j++)
  if (n!= -1)
  {
     out[ n].print();
-    fout<<"information (title)\n";
+    fout<<"информаия по параметру название\n";
     fout<<out[n];
  }
  else
  {
-    cout << " title it's not find\n";
-    fout<<"information (title)\n";
-    fout<<"title it's not find\n" ;
+    cout << " платежа с введенным параметром нет\n";
+    fout<<"информация по параметру название\n";
+    fout<<"платежа с введенным параметром нет\n" ;
  }
  break;
 ////////////////////////////////////////
 case 4:
-    cout <<"\n\t\t\tdate for balance\n"<<endl;
+    cout <<"\n\t\t\tвведите дату для просмотра баланса на эту дату\n"<<endl;
     cin>>date1;
 
 for ( i = 0; i < x; i++)
@@ -217,12 +218,13 @@ for ( j=0; j<x;  j++)
 if ((pay1!=0)&&(pay2!=0))
  {
     balance=pay1-pay2;
-    cout<<"balance = "<<balance<<"pay1 - "<<pay1<<"pay2 "<<pay2;
-    fout<<"information (balance)\n";
-    fout<<"balance= "<<balance;
+    cout<<"баланс = "<<balance<<"платеж приходного - "<<pay1<<"платеж расходного "<<pay2;
+
+    fout<<"баланс на введенную дату : "<<balance;
  }
  break;
  }
 fout.close();
+cout<<"\n\n\n\t\t\tчтобы выйти из приложения нажмите  любую кнопку\n\n\n\n";
     return 0;
 }
